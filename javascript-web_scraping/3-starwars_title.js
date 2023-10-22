@@ -1,5 +1,4 @@
 #!/usr/bin/node
-
 // Import the 'request' module to make HTTP requests
 const request = require('request');
 
