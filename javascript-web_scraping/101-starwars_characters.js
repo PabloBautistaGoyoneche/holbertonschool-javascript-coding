@@ -5,7 +5,7 @@ const request = require('request');
 const movieId = process.argv[2]; // Get movie ID from command line
 
 if (!movieId) {
-  console.log("You must provide the movie ID as an argument.");
+  console.log('You must provide the movie ID as an argument.');
   process.exit(1);
 }
 
@@ -18,7 +18,7 @@ request(apiUrl, (error, response, body) => {
     const characterUrls = movieData.characters;
     let characterCount = 0;
 
-    function printCharacterName() {
+    function printCharacterName () {
       if (characterCount < characterUrls.length) {
         const characterUrl = characterUrls[characterCount];
         request(characterUrl, (charError, charResponse, charBody) => {
@@ -39,4 +39,3 @@ request(apiUrl, (error, response, body) => {
     console.error('Error getting movie data:', error);
   }
 });
-
