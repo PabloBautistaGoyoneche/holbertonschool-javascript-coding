@@ -5,13 +5,13 @@ const request = require('request');
 const movieId = process.argv[2]; // Get movie ID from command line
 
 if (!movieId) {
-  console.log("You must provide the movie ID as an argument.");
+  console.log('You must provide the movie ID as an argument.');
   process.exit(1);
 }
 
 const apiUrl = `https://swapi.dev/api/films/${movieId}/`;
 
-function printCharacterName(characterUrls, characterCount) {
+function printCharacterName (characterUrls, characterCount) {
   if (characterCount < characterUrls.length) {
     const characterUrl = characterUrls[characterCount];
     request(characterUrl, (charError, charResponse, charBody) => {
