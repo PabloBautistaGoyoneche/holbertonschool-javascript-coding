@@ -29,8 +29,6 @@ function printCharacterName(characterUrls, characterCount) {
 request(apiUrl, (error, response, body) => {
   if (!error && response.statusCode === 200) {
     const movieData = JSON.parse(body);
-
-    console.log(`Movie's characters: ${movieData.title}\n`);
     const characterUrls = movieData.characters;
     printCharacterName(characterUrls, 0); // Start printing character names
   } else {
