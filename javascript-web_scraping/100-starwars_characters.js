@@ -5,7 +5,7 @@ const request = require('request');
 const movieId = process.argv[2]; // Get movie ID from command line
 
 if (!movieId) {
-  console.log("Debes proporcionar el ID de la película como argumento.");
+  console.log('Debes proporcionar el ID de la película como argumento.');
   process.exit(1);
 }
 
@@ -29,4 +29,3 @@ request(apiUrl, (error, response, body) => {
     console.error('Error getting movie data:', error);
   }
 });
-
