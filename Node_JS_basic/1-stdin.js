@@ -1,18 +1,15 @@
-// We import the readline module from Node.js
-const readline = require('readline');
+// Print a welcome message to the console.
+process.stdout.write('Welcome to Holberton School, what is your name?\n');
 
-// We created a readline interface to handle input and output.
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
+// Listen for the 'readable' event on the standard input (stdin).
+process.stdin.on('readable', () => {
+  const chunk = process.stdin.read();
+
+  if (chunk) {
+    process.stdout.write(`Your name is: ${chunk}`);
+  }
 });
 
-// We show the welcome message.
-console.log('Welcome to Holberton School, what is your name?');
-
-// We ask the user to enter their name.
-rl.question('', (name) => {
-  console.log(`Your name is: ${name}`);
-  console.log('This important software is now closing');
-  rl.close();
+process.stdin.on('end', () => {
+  process.stdout.write('This important software is now closing\n');
 });
